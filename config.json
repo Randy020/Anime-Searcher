@@ -1,0 +1,6 @@
+{
+    "bot_token":"",
+    "mongodb_uri":"",
+    "traceMoe_Token":"",
+    "prefix":"+"
+}
