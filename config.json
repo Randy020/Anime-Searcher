@@ -2,5 +2,6 @@
     "bot_token":"",
     "mongodb_uri":"",
     "traceMoe_Token":"",
-    "prefix":"+"
+    "prefix":"+",
+    "topgg_token": ""
 }

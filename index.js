@@ -86,7 +86,8 @@ try{
     
 })
 
-client.on('newChannel',(data)=>{ //Custom event
+client.on('newChannel',(newChannel,oldChannel)=>{ //Custom event
+    if(oldChannel) delete workChannels[workChannels.indexOf(oldChannel)];
     workChannels = [...workChannels, data]
 })
 

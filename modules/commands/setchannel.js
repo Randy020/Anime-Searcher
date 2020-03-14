@@ -8,8 +8,9 @@ module.exports = {
         chn = chn.match(/[0-9]/gi).join('');
         await db.createGuild(msg.guild.id)
         if(msg.guild.channels.cache.find(ch=>ch.id == chn)) {
-            db.setGuildLog(msg.guild.id,chn);
-            client.emit('newChannel',chn)
+            let guild = await db.getData(msg.guild.id);
+            db.setGuildLog(msg.guild.id,chn,guild.settigs.workChannel ? guild.settigs.workChannel : undefined);
+            client.emit('newChannel',newChannel,oldChannel)
             msg.channel.send(`(づ￣ ³￣)づ <#${chn}> now can be used to search anime source! ฅ^•ﻌ•^ฅ`);
          } else {
              msg.channel.send('(╯°□°）╯︵ ┻━┻ The mentioned channel does not exist! (╥﹏╥)')
