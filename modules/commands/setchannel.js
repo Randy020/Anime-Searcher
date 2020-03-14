@@ -9,7 +9,8 @@ module.exports = {
         await db.createGuild(msg.guild.id)
         if(msg.guild.channels.cache.find(ch=>ch.id == chn)) {
             db.setGuildLog(msg.guild.id,chn);
-            msg.channel.send(`(づ￣ ³￣)づ <#${chn}> now can be used to search anime source! ฅ^•ﻌ•^ฅ`)
+            client.emit('newChannel',chn)
+            msg.channel.send(`(づ￣ ³￣)づ <#${chn}> now can be used to search anime source! ฅ^•ﻌ•^ฅ`);
          } else {
              msg.channel.send('(╯°□°）╯︵ ┻━┻ The mentioned channel does not exist! (╥﹏╥)')
          }  
