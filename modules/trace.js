@@ -30,7 +30,7 @@ class TraceMoe {
                             'Content-Type': 'application/json'
                         }})
             let result = await request.json()
-            if(!result.limit || !result.docs) return reject('rate limit')
+            if(!result.limit || !result.docs.length) return reject('rate limit')
             resolve(this.sortAndUnique(result))
            } catch(err) {
                 reject(err)

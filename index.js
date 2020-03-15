@@ -1,4 +1,4 @@
-const Trace =  require('./modules/trace'),
+﻿const Trace =  require('./modules/trace'),
       embed = require('./modules/embed'),
       Mongodb = require('./modules/mongo'),
       config = require('./config.json'),
@@ -88,7 +88,7 @@ try{
 
 client.on('newChannel',(newChannel,oldChannel)=>{ //Custom event
     if(oldChannel) delete workChannels[workChannels.indexOf(oldChannel)];
-    workChannels = [...workChannels, data]
+    workChannels.push(newChannel)
 })
 
 client.login(config.bot_token)

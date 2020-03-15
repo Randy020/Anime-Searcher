@@ -1,4 +1,4 @@
-module.exports = {
+﻿module.exports = {
     command: 'setchannel',
     description: "set bot's work channel to search",
     run: async(client,msg,config,db)=>{
@@ -9,8 +9,9 @@ module.exports = {
         await db.createGuild(msg.guild.id)
         if(msg.guild.channels.cache.find(ch=>ch.id == chn)) {
             let guild = await db.getData(msg.guild.id);
-            db.setGuildLog(msg.guild.id,chn,guild.settigs.workChannel ? guild.settigs.workChannel : undefined);
-            client.emit('newChannel',newChannel,oldChannel)
+	    let oldChannel = guild.settings.workChannel ? guild.settings.workChannel : undefined
+            db.setGuildLog(msg.guild.id,chn);
+            client.emit('newChannel',chn,oldChannel)
             msg.channel.send(`(づ￣ ³￣)づ <#${chn}> now can be used to search anime source! ฅ^•ﻌ•^ฅ`);
          } else {
              msg.channel.send('(╯°□°）╯︵ ┻━┻ The mentioned channel does not exist! (╥﹏╥)')
