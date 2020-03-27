@@ -3,7 +3,7 @@ module.exports = (otherResult,index,msg)=>{
     result = otherResult[index];
     var video_url = `https://media.trace.moe/video/${result.anilist_id}/${encodeURIComponent(result.filename)}?t=${result.at}&token=${result.tokenthumb}`.replace(/[)]/g, '%29')
     return {
-        title: result.title_english,
+        title: `That's what i've found ฅ^•ﻌ•^ฅ`,
         color: 7589871,
          footer: {
              icon_url: msg.author.avatarURL(),
