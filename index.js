@@ -20,7 +20,7 @@ dbl.on('posted', () => {
     console.log('Server count posted!');
 })
 
-client.user.setActivity('+setchannel', { type: 'LISTENING' })
+client.setActivity('+setchannel', { type: 'LISTENING' })
 
 client.on('ready',async()=>{
     console.log(`Logged in as ${client.user.tag}`);
