@@ -20,6 +20,8 @@ dbl.on('posted', () => {
     console.log('Server count posted!');
 })
 
+client.user.setActivity('+setchannel', { type: 'LISTENING' })
+
 client.on('ready',async()=>{
     console.log(`Logged in as ${client.user.tag}`);
     console.log(`Working with: ${client.guilds.cache.size} guilds`)
