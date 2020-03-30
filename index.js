@@ -1,7 +1,7 @@
 ﻿const Trace =  require('./modules/trace'),
       embed = require('./modules/embed'),
       Mongodb = require('./modules/mongo'),
-      config = require('./config.json'),
+      config = require('./config.js'),
       Discord = require('discord.js'),
       fs = require('fs'),
       DBL = require("dblapi.js"),
