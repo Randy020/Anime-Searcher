@@ -20,11 +20,10 @@ dbl.on('posted', () => {
     console.log('Server count posted!');
 })
 
-client.setActivity('+setchannel', { type: 'LISTENING' })
-
 client.on('ready',async()=>{
     console.log(`Logged in as ${client.user.tag}`);
     console.log(`Working with: ${client.guilds.cache.size} guilds`)
+    client.user.setActivity('+setchannel', { type: 'LISTENING' })
     try {
         fs.readdir('./modules/commands/',(err,files)=>{
         files.map(file=>{
