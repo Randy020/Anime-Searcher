@@ -83,7 +83,7 @@ try{
             });
         collector.on('end', async(collected) => { await ans.react('🐧') } );
     } catch(err) {
-        msg.channel.send({embed:{description:`Image doesn't exist (ง •̀_•́)ง`,color:0xff322b}});
+        msg.channel.send({embed:{description:`Image doesn't exist or [trace.moe](https://trace.moe/) is dead (ง •̀_•́)ง`,color:0xff322b}});
     } finally {
         msg.channel.stopTyping();
     } 
